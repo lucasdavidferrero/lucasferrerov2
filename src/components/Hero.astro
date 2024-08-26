@@ -1,16 +1,25 @@
 ---
 
 ---
-<section class="relative text-white py-40 bg-cover bg-center" style="background-image: url('/bg-fire-flakes-overlay.jpg');">
+<section class="relative text-white section-hero bg-cover bg-center flex justify-center items-center border-b border-[#727DA1]/20" style="background-image: url('/fire-flakes-overlay-1.jpg');">
     <div class="absolute inset-0 bg-black bg-opacity-10"></div>
     <div class="relative container mx-auto text-center">
-        <h1 class="text-5xl font-bold mb-4 shadowEffect">Lucas Ferrero</h1>
+        <h1 class="text-5xl shadowEffect mb-4 font-display uppercase tracking-widest bg-gradient-to-r from-burnt-orange to-gold bg-clip-text text-transparent">
+            Lucas
+            Ferrero
+        </h1>
         <p class="text-xl text-gray-400">Full Stack Developer</p>
     </div>
 </section>
 
 <style>
-.shadowEffect {
-    text-shadow: 2px 2px 30px #ea580c;
-}
+    .section-hero {
+        min-height: calc(60vh - 60px);
+    }
+    .textGlow-1 {
+        text-shadow: 0 0 10px #ff8c42, 0 0 20px #ff8c42, 0 0 30px #ffd700, 0 0 40px #ffd700;
+    }
+    .shadowEffect {
+        text-shadow: -2px 4px 20px #ff8c42, -2px 4px 80px #ff8c42;
+    }
 </style>
