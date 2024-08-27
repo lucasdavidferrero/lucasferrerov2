@@ -11,6 +11,9 @@ export default {
       colors: {
         'burnt-orange': '#ff8c42',
         'gold': '#ffd700',
+        'off-white': '#f2f2f2',
+        'warm-gray': '#a6a6a6',
+        'neon-green': '#00ff99',
       }
     },
   },
