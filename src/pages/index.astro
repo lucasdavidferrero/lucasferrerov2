@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionAboutme from '../components/Home/SectionAboutme.astro';
 import SectionExperience from '../components/Home/SectionExperience.astro'
+import SectionLatestWorks from '../components/Home/SectionLatestWorks.astro'
+import SectionTestimonials from '../components/Home/SectionTestimonials.astro'
 ---
 
 <Layout title="Welcome to Astro.">
@@ -11,8 +13,14 @@ import SectionExperience from '../components/Home/SectionExperience.astro'
 		<div>
 			<SectionAboutme />
 		</div>
-		<div class="">
+		<div>
 			<SectionExperience />
+		</div>
+		<div class="lg:w-1/2 lg:mx-auto">
+			<SectionLatestWorks />
+		</div>
+		<div>
+			<SectionTestimonials />
 		</div>
 	</main>
 </Layout>
