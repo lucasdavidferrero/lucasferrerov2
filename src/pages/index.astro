@@ -7,7 +7,7 @@ import SectionLatestWorks from '../components/Home/SectionLatestWorks.astro'
 import SectionTestimonials from '../components/Home/SectionTestimonials.astro'
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Lucas Ferrero | Fullstack Developer">
 	<main>
 		<Hero />
 		<div>
@@ -16,14 +16,27 @@ import SectionTestimonials from '../components/Home/SectionTestimonials.astro'
 		<div>
 			<SectionExperience />
 		</div>
-		<div class="lg:w-1/2 lg:mx-auto">
-			<SectionLatestWorks />
+		<div class="bg-hero-lastestworks w-full bg-[url('/hero-bg-alternative-sm.jpg')] lg:bg-[url('/hero-bg-alternative.jpg')]">
+			<div>
+				<SectionLatestWorks />
+			</div>
 		</div>
-		<div>
+		<div class="bg-hero-testimonials" style="background-image: url('/fire-flakes-overlay-freeject-2.jpg');">
 			<SectionTestimonials />
 		</div>
 	</main>
 </Layout>
 
 <style>
+	.bg-hero-lastestworks {
+		background-size: cover;
+		background-position: center top -20px;
+		background-repeat: no-repeat;
+	}
+	.bg-hero-testimonials {
+		background-position: center;
+		background-size: auto 100%;
+		background-repeat: repeat-x;
+		background-origin: content-box;
+	}
 </style>
