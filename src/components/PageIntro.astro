@@ -11,7 +11,9 @@ const { title, subtitle } = Astro.props;
 <div>
     <section class="py-14 container mx-auto text-center px-4">
         <TitleSubtitle title={title} subtitle={subtitle}/>
-        <Linebreak  hasMargin={true} />
+        <div class="mt-8">
+            <Linebreak  hasMargin={false} />
+        </div>
     </section>
 </div>
 
