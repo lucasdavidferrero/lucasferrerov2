@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import PageIntro from '../components/PageIntro.astro';
 import SectionIntro from '../components/About/SectionIntro.astro'
+import Linebreak from '../components/UI/Linebreak.astro'
+import SectionExperience from '../components/About/SectionExperience.astro'
+import SectionProfesionalExpertice from '../components/About/SectionProfesionalExpertice.astro'
 ---
 <Layout title="Lucas Ferrero | Fullstack Developer">
     <main>
@@ -10,6 +13,14 @@ import SectionIntro from '../components/About/SectionIntro.astro'
         </div>
         <div>
             <SectionIntro />
+        </div>
+        <Linebreak hasMargin={false} />
+        <div>
+            <SectionExperience />
+        </div>
+        <Linebreak hasMargin={false} />
+        <div>
+            <SectionProfesionalExpertice />
         </div>
     </main>
 </Layout>
