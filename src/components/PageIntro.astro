@@ -1,0 +1,18 @@
+---
+import Linebreak from './UI/Linebreak.astro'
+import TitleSubtitle from './UI/TitleSubtitle.astro'
+interface Props {
+    title: string;
+    subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+<div>
+    <section class="py-14 container mx-auto text-center px-4">
+        <TitleSubtitle title={title} subtitle={subtitle}/>
+        <Linebreak  hasMargin={true} />
+    </section>
+</div>
+
+

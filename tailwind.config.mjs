@@ -9,7 +9,8 @@ export default {
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
-        display: ['Orbitron', 'sans-serif']
+        display: ['Orbitron', 'sans-serif'],
+        newsreader: ['Newsreader', 'serif']
       },
       colors: {
         'burnt-orange': '#ff8c42',

@@ -1,0 +1,20 @@
+---
+interface Props {
+    title: string;
+    subtitle: string;
+}
+
+const { title = 'Some Title goes here', subtitle } = Astro.props;
+---
+<div class="font-newsreader italic">
+    <h2 class="text-4xl text-white-shadow">{title}</h2>
+    {subtitle && subtitle.length ? (
+            <p class="text-xl text-warm-gray">{subtitle}</p>
+    ) : null}
+</div>
+
+<style>
+    .text-white-shadow {
+        text-shadow: 0 4px 10px rgba(0,87,255,.2),0 -4px 10px rgba(255,90,0,.15),0 0 30px hsla(0,0%,100%,.2);
+    }
+</style>
