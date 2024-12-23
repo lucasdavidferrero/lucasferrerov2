@@ -5,17 +5,18 @@ import { getCollection } from 'astro:content';
 // Get all entries from a collection.
 // Requires the name of the collection as an argument.
 const allProjects = await getCollection('projects');
+const sortedProjects = allProjects.sort((a, b) => new Date(b.data.publishDate) - new Date(a.data.publishDate));
 ---
 <section class="container mx-auto text-center lg:text-left lg:w-1/2 px-4">
     <div>
         <ul class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {allProjects.map(project => (
+            {sortedProjects.map(project => (
                     <li>
                         <a href={`/project/${project.id}`} class="h-auto w-full rounded-lg relative projectAnchorElement block">
                             <img src={project.data.imagePath} alt="A bird." class="h-auto w-full block rounded-lg relative" />
                             <div class="backdrop"></div>
                             <div class="opacity-0 absolute bottom-0 left-0 right-0 mx-auto px-4 py-2 w-[80%] text-center rounded-t-lg shadow-md backdrop-blur-md projectTextContent" >
-                                {project.data.title}
+                                {project.data.title} - { project.data.year }
                             </div>
                         </a>
                     </li>
@@ -38,10 +39,10 @@ const allProjects = await getCollection('projects');
     }
     .projectTextContent {
         transition: opacity 0.6s ease-in;
-        border-top-width: 1px;
-        border-left-width: 1px;
-        border-right-width: 1px;
-        border-color: rgba(255, 255, 255, 0.9);
+        //border-top-width: 1px;
+        //border-left-width: 1px;
+        //border-right-width: 1px;
+        //border-color: rgba(255, 255, 255, 0.9);
     }
     .projectAnchorElement:hover > .backdrop {
         background-color: rgba(0,0,0, 0.25);
