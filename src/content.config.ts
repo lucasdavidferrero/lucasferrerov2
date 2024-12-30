@@ -10,13 +10,19 @@ const projects = defineCollection({
     schema: z.object({
         code: z.string(),
         title: z.string(),
+        subtitle: z.string(),
         description: z.string(),
-        imagePath: z.string(),
+        imageCard: z.string(),
+        imageWebsiteDesktop: z.string(),
+        imageWebsiteMobile: z.string(),
         websiteURL: z.string(),
         teamMembers: z.string(),
         slug: z.string(),
         year: z.number().int().positive(),
-        publishDate: z.date()
+        publishDate: z.date(),
+        duration: z.string(),
+        technologies: z.string(),
+        role: z.string()
     })
 });
 

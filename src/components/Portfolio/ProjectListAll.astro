@@ -13,7 +13,7 @@ const sortedProjects = allProjects.sort((a, b) => new Date(b.data.publishDate) -
             {sortedProjects.map(project => (
                     <li>
                         <a href={`/portfolio/${project.id}`} class="h-auto w-full rounded-lg relative projectAnchorElement block">
-                            <img src={project.data.imagePath} alt="A bird." class="h-auto w-full block rounded-lg relative" />
+                            <img src={project.data.imageCard} alt="A bird." class="h-auto w-full block rounded-lg relative" />
                             <div class="backdrop"></div>
                             <div class="opacity-0 absolute bottom-0 left-0 right-0 mx-auto px-4 py-2 w-[80%] text-center rounded-t-lg shadow-md backdrop-blur-md projectTextContent" >
                                 {project.data.title} - { project.data.year }
