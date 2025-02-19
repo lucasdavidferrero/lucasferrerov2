@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Montserrat', 'sans-serif';
+    --font-serif: 'Merriweather', 'serif';
+    --font-display: 'Orbitron', 'sans-serif';
+    --font-newsreader: 'Newsreader', 'serif';
+
+    --color-burnt-orange: '#ff8c42';
+    --color-gold: '#ffd700';
+    --color-off-white: '#f2f2f2';
+    --color-warm-gray: '#a6a6a6';
+    --color-neon-green: '#00ff99';
+}

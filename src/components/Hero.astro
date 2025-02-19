@@ -2,7 +2,7 @@
 import LinkButton from '../components/LinkButton.astro';
 ---
 <section id="parallax-bg" class="relative text-white section-hero py-6 bg-cover bg-center flex flex-col justify-center items-center border-b border-[#727DA1]/20" style="background-image: url('/fire-flakes-overlay-1.jpg');">
-    <div class="absolute inset-0 bg-black bg-opacity-10"></div>
+    <div class="absolute inset-0 bg-black/20"></div>
     <div class="relative container mx-auto text-center">
         <h1 class="text-5xl shadowEffect mb-4 font-display uppercase tracking-widest bg-gradient-to-r from-burnt-orange to-gold bg-clip-text text-transparent">
             Lucas
@@ -23,10 +23,10 @@ import LinkButton from '../components/LinkButton.astro';
         /* min-height: calc(60vh - 60px); */
         min-height: calc(45vh - 60px);
     }
-    .textGlow-1 {
-        text-shadow: 0 0 10px #ff8c42, 0 0 20px #ff8c42, 0 0 30px #ffd700, 0 0 40px #ffd700;
+    .textGlow {
+        text-shadow: 0 0 1px #ff8c42, 0 0 5px #ff8c42, 0 0 10px #ffd700, 0 0 15px #ffd700;
     }
     .shadowEffect {
-        text-shadow: -2px 4px 20px #ff8c42, -2px 4px 80px #ff8c42;
+        text-shadow: -2px 4px 2px #ff8c42, -2px 4px 10px #ff8c42;
     }
 </style>
