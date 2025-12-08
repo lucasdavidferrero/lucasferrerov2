@@ -1,32 +1,140 @@
 ---
 import LinkButton from '../components/LinkButton.astro';
 ---
-<section id="parallax-bg" class="relative text-white section-hero py-6 bg-cover bg-center flex flex-col justify-center items-center border-b border-[#727DA1]/20" style="background-image: url('/fire-flakes-overlay-1.jpg');">
-    <div class="absolute inset-0 bg-black/20"></div>
-    <div class="relative container mx-auto text-center">
-        <h1 class="text-5xl shadowEffect mb-4 font-display uppercase tracking-widest bg-gradient-to-r from-burnt-orange to-gold bg-clip-text text-transparent">
-            Lucas
-            Ferrero
-        </h1>
-        <p class="text-xl text-gray-400">Full Stack Developer</p>
+<section id="parallax-bg" class="relative text-white section-hero py-6 flex flex-col justify-center items-center border-b border-[#727DA1]/10 overflow-hidden">
+    <!-- Layered background with depth -->
+    <div class="absolute inset-0">
+        <!-- Base image layer -->
+        <div class="absolute inset-0 bg-[url('/fire-flakes-overlay-1.jpg')] bg-cover bg-center opacity-40"></div>
+        
+        <!-- Gradient overlays for depth -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black/80"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30"></div>
+        
+        <!-- Animated accent lines -->
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-burnt-orange/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+        
+        <!-- Subtle animated glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-radial from-burnt-orange/10 to-transparent blur-3xl animate-pulse-subtle"></div>
     </div>
-    <!--<a class="relative mt-auto inline-flex items-center text-gray-400 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-2 focus:outline-none focus:ring-gray-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center" href="#">-->
-    <!--    About me-->
-    <!--    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">-->
-    <!--        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M1 5h12m0 0L9 1m4 4L9 9"/>-->
-    <!--    </svg>-->
-    <!--</a>-->
+
+    <!-- Content -->
+    <div class="relative container mx-auto text-center z-10 px-4">
+        <!-- Name with modern treatment -->
+        <h1 class="text-5xl md:text-6xl lg:text-7xl mb-4 font-display uppercase tracking-[0.2em] relative">
+            <span class="inline-block gradient-text">
+                Lucas Ferrero
+            </span>
+            <!-- Subtle underline accent -->
+            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent"></div>
+        </h1>
+        
+        <!-- Role with typing effect styling -->
+        <p class="text-xl md:text-2xl text-gray-400 mt-8 font-light tracking-wide">
+            <span class="inline-block border-r-2 border-gold/50 pr-2 animate-blink">Full Stack Engineer</span>
+        </p>
+
+        <!-- Subtle location or tagline -->
+        <p class="text-sm text-gray-500 mt-4 tracking-widest uppercase">
+            Building web experiences
+        </p>
+    </div>
+
+    <!-- Decorative geometric elements -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <!-- Corner accents -->
+        <div class="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-burnt-orange/20"></div>
+        <div class="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-gold/20"></div>
+        
+        <!-- Floating code brackets for dev theme -->
+        <div class="absolute top-1/4 left-10 text-4xl md:text-6xl text-burnt-orange/10 font-mono select-none">&lt;</div>
+        <div class="absolute bottom-1/4 right-10 text-4xl md:text-6xl text-gold/10 font-mono select-none">/&gt;</div>
+    </div>
 </section>
 
 <style>
     .section-hero {
-        /* min-height: calc(60vh - 60px); */
-        min-height: calc(45vh - 60px);
+        min-height: calc(65vh - 60px);
     }
-    .textGlow {
-        text-shadow: 0 0 1px #ff8c42, 0 0 5px #ff8c42, 0 0 10px #ffd700, 0 0 15px #ffd700;
+
+    /* Gradient text effect using background-clip with fallback */
+    .gradient-text {
+        background: linear-gradient(90deg, #e5e7eb 0%, #ffffff 50%, #e5e7eb 100%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient-x 8s ease infinite;
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
     }
-    .shadowEffect {
-        text-shadow: -2px 4px 2px #ff8c42, -2px 4px 10px #ff8c42;
+
+    /* Fallback for browsers that don't support background-clip */
+    @supports not (background-clip: text) {
+        .gradient-text {
+            color: #f5f5f5;
+            -webkit-text-fill-color: initial;
+        }
+    }
+
+    @keyframes gradient-x {
+        0%, 100% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    @keyframes pulse-subtle {
+        0%, 100% {
+            opacity: 0.3;
+        }
+        50% {
+            opacity: 0.6;
+        }
+    }
+
+    @keyframes blink {
+        0%, 49% {
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+        50%, 100% {
+            border-color: transparent;
+        }
+    }
+
+    .animate-pulse-subtle {
+        animation: pulse-subtle 6s ease-in-out infinite;
+    }
+
+    .animate-blink {
+        animation: blink 1.2s step-end infinite;
+    }
+
+    .bg-gradient-radial {
+        background: radial-gradient(circle, var(--tw-gradient-stops));
+    }
+
+    /* Parallax effect on scroll */
+    @media (prefers-reduced-motion: no-preference) {
+        #parallax-bg {
+            background-attachment: fixed;
+        }
     }
 </style>
+
+<script>
+// Optional: Add subtle parallax effect to background elements
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    window.addEventListener('scroll', () => {
+        const section = document.getElementById('parallax-bg');
+        if (!section) return;
+        
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * 0.3;
+        
+        section.style.transform = `translate3d(0, ${rate}px, 0)`;
+    });
+}
+</script>
